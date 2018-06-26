@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			<ul>
+			{% for message in messages %}
+				<li>{{message}}</li>
+			{% endfor %}
+			</ul>
+		{% endif %}
+	{% endwith %}
+	<form method="POST" action="" enctype="multipart/form-data">
+		<h1>State File Prep</h1>
+		<label>Submitter ID</label>
+		<input name="submitter_id" value="0049"/>
+		<br/><br/>
+		<label>Auditor ID</label>
+		<input name="auditor_id" value="000"/>
+		<br/><br/>
+		<label>Batch Number</label>
+		<input name="batch_num" value="001"/>
+		<br/><br/>
+		<label>File (XLSX)</label>
+		<input name="file" type="file"/>
+		<br/><br/>
+		<button type="submit">Submit</button>
+	</form>
+</body>
+</html>
